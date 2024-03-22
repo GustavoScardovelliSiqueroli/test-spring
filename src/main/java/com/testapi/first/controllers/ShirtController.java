@@ -36,6 +36,7 @@ public class ShirtController {
         return ResponseEntity.status(HttpStatus.OK).body(shirtRepository.findAll());
     }
 
+    @SuppressWarnings("null")
     @PostMapping("/")
     public ResponseEntity<Shirt> createShirt(@RequestBody @Valid ShirtRecordDto shirtRecordDto) {
         var shirt = new Shirt();
@@ -44,16 +45,18 @@ public class ShirtController {
 
     }
 
+    @SuppressWarnings("null")
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteShirt(@PathVariable(value = "id") UUID id) {
         Optional<Shirt> shirt = shirtRepository.findById(id);
         if (shirt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("product not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
         shirtRepository.delete(shirt.get());
         return ResponseEntity.status(HttpStatus.OK).body("Product deleted successfully.");
     }
 
+    @SuppressWarnings("null")
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateShirt(@PathVariable UUID id,
             @RequestBody @Valid ShirtRecordDto shirtRecordDto) {
