@@ -18,10 +18,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.testapi.first.models.Shirt;
 import com.testapi.first.repositories.ShirtRepository;
 
 import com.testapi.first.dtos.ShirtRecordDto;
+import com.testapi.first.entities.Shirt;
+
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController

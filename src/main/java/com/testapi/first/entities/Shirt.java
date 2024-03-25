@@ -1,4 +1,4 @@
-package com.testapi.first.models;
+package com.testapi.first.entities;
 
 import java.io.Serializable;
 import java.util.UUID;
