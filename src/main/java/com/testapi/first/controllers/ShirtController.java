@@ -48,7 +48,7 @@ public class ShirtController {
 
     @SuppressWarnings("null")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteShirt(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<Object> deleteShirt(@PathVariable UUID id) {
         Optional<Shirt> shirt = shirtRepository.findById(id);
         if (shirt.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
